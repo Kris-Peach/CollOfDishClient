@@ -34,7 +34,8 @@
                 <asp:Button ID="btnEnter" CssClass="my-btn btn btn-warning" runat="server" Text="ВХОД" OnClick="BtnEnter_Click"/>
             </div>
             <div class="col-md-6 text-left">
-                <button type="button" class="my-btn btn btn-warning">РЕГИСТРАЦИЯ</button>
+                <!--<button type="button" class="my-btn btn btn-warning">РЕГИСТРАЦИЯ</button> -->
+                <asp:Button ID="BtnRegistration" runat="server" CssClass="my-btn btn btn-warning" Text="РЕГИСТРАЦИЯ" OnClick="BtnRegistration_Click" />
             </div>
         </div>
         

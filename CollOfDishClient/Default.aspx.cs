@@ -50,5 +50,12 @@ namespace CollOfDishClient
             //Page.ClientScript.RegisterStartupScript(
             //  this.GetType(), "OpenWindow","window.location('EnterPage');", true);
         }
+
+        protected void BtnRegistration_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("Registration.aspx", true);
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "ClosePage", "window.close();", true);
+
+        }
     }
 }

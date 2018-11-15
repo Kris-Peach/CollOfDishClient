@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Registration" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Registration.aspx.cs" Inherits="CollOfDishClient.Contact" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
-    <h2><%: Title %>.</h2>
+    <h2><%: Title %> </h2>
     <div class="row">
         <div class="form-group " style="padding-top: 3%;">
             <label for="usrName" class="col-xs-2 control-label">Имя:</label>
