@@ -13,5 +13,14 @@ namespace CollOfDishClient
         {
 
         }
+
+        protected void Btn_registration_Click(object sender, EventArgs e)
+        {
+            string usrName = TxtBox_usrName.Text;
+            string usrScdName = TxtBox_usrScdName.Text;
+            string pass1 = TxtBox_pass1.Text;
+            string pass2 = TxtBox_pass2.Text;
+
+        }
     }
 }

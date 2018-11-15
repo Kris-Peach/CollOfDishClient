@@ -32,21 +32,22 @@
                 <div class="form-group text-center" style="padding-top: 3%;">
                     <label for="usr" class="col-xs-2 control-label">Логин:</label>
                     <div class="col-xs-10">
-                    <!--<input type="text" class="form-control" id="usr" placeholder="Введите логин"> -->
                         <asp:TextBox ID="TxtBox_login" placeholder="Введите логин" runat="server" CssClass="form-control" ></asp:TextBox>
+                        <asp:RequiredFieldValidator runat="server" ID="valid_login" ControlToValidate="TxtBox_login"
+                        Display="Dynamic">Поле пусто</asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="form-group text-center" style="padding-top:8%;">
                     <label for="inputPassword" class="col-xs-2 control-label">Пароль:</label>
                     <div class="col-xs-10">
-                    <!--<input type="password" class="form-control" id="inputPassword" placeholder="Введите пароль">-->
                     <asp:TextBox ID="TxtBox_password" runat="server" CssClass="form-control" placeholder="Введите пароль" TextMode="Password"></asp:TextBox>
+                    <asp:RequiredFieldValidator runat="server" ID="valid_pass" ControlToValidate="TxtBox_password"
+                        Display="Dynamic">Поле пусто</asp:RequiredFieldValidator>
                     </div>
                 </div>
                 <div class="form-group" style="padding-top:10%;">
                     <div class="col-xs-offset-3 col-xs-10">
-                        <!--<button type="submit" class="my-btn btn btn-warning ">войти</button>-->
-                        <asp:Button ID="Btn_login" runat="server" CssClass="my-btn btn btn-warning" Text="войти" OnClick="Btn_login_Click"/>
+                        <asp:Button ID="Btn_login" runat="server" CausesValidation="true" CssClass="my-btn btn btn-warning" Text="войти" OnClick="Btn_login_Click"/>
                     </div>
                 </div>
            
