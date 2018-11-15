@@ -20,7 +20,9 @@ body {
     
 
 /* Set widths on the form inputs since otherwise they're 100% wide */
-input,
+input{
+    max-width: 100%;
+}
 select,
 textarea {
     max-width: 280px;
@@ -89,9 +91,27 @@ textarea {
     padding-top: 25%;
 }
 
+.btn-search {
+    margin-top: 3%;
+    font-size: 20px;
+    font-family: 'Source Sans Pro', sans-serif;
+    background-color: #D2811E;
+    float:right;
+}
+.txt-search{
+    width:65%;
+    display:inline-block;
+    vertical-align:middle;
+}
+
 .enter-form {
     padding-top: 25%;
     padding-left: 25%;
+}
+.lable-user {
+    font-size: 14px;
+    font-family: 'Lato', sans-serif;
+    font-weight:700;
 }
 
 
