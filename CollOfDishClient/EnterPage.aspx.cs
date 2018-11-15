@@ -13,5 +13,12 @@ namespace CollOfDishClient
         {
 
         }
+
+        protected void Btn_login_Click(object sender, EventArgs e)
+        {
+            string login = TxtBox_login.Text;
+            TxtBox_login.Text = "";
+            string password = TxtBox_password.Text;
+        }
     }
 }
