@@ -30,7 +30,8 @@
         </div>
         <div class="btn-on-home-page">
             <div class="col-md-6 text-right">
-                <button type="button" class="my-btn btn btn-warning ">ВХОД</button>
+                <!--<button type="button" class="my-btn btn btn-warning " runat="server" onclick="BtnEnter_click">ВХОД</button>  -->
+                <asp:Button ID="btnEnter" CssClass="my-btn btn btn-warning" runat="server" Text="ВХОД" OnClick="BtnEnter_Click"/>
             </div>
             <div class="col-md-6 text-left">
                 <button type="button" class="my-btn btn btn-warning">РЕГИСТРАЦИЯ</button>

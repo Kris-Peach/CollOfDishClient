@@ -41,5 +41,14 @@ namespace CollOfDishClient
             Label1.Text = answer;
 
         }
+
+        protected void BtnEnter_Click(object sender, EventArgs e)
+        {
+            Server.Transfer("EnterPage.aspx", true);
+            Page.ClientScript.RegisterStartupScript(Page.GetType(), "ClosePage", "window.close();", true);
+
+            //Page.ClientScript.RegisterStartupScript(
+            //  this.GetType(), "OpenWindow","window.location('EnterPage');", true);
+        }
     }
 }

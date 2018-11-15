@@ -107,7 +107,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="About.aspx" />
+    <Content Include="EnterPage.aspx" />
     <None Include="Connected Services\ServiceReference1\AgServer1.disco" />
     <Content Include="Source\Images\2.jpg" />
     <Content Include="Source\Images\212783-one-eyeland-roasted_chicken_slices-by-greg-stroube.jpg" />
@@ -203,12 +203,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
-    <Compile Include="About.aspx.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="EnterPage.aspx.cs">
+      <DependentUpon>EnterPage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="About.aspx.designer.cs">
-      <DependentUpon>About.aspx</DependentUpon>
+    <Compile Include="EnterPage.aspx.designer.cs">
+      <DependentUpon>EnterPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Connected Services\ServiceReference1\Reference.cs">

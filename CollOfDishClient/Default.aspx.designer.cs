@@ -13,6 +13,15 @@ namespace CollOfDishClient {
     public partial class _Default {
         
         /// <summary>
+        /// btnEnter элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button btnEnter;
+        
+        /// <summary>
         /// TextBox1 элемент управления.
         /// </summary>
         /// <remarks>
