@@ -21,7 +21,7 @@
                 Display="Dynamic">пустой запрос</asp:RequiredFieldValidator>
                 </div>
                 <asp:Button ID="Btn_search" runat="server" CausesValidation="true" CssClass="btn-search btn btn-warning"
-                Text="найти" OnClick="Btn_search_Click" /><!--<span class = "glyphicon glyphicon-search"></span> -->
+                Text="найти" OnClick="Btn_search_Click" />
             </div>
             
             </div>
@@ -32,10 +32,32 @@
                     <img src="Source/Images/user-icon-png-pnglogocom.png" class="img-responsive" alt="Responsive Image"/> 
                 </div>
                 <div class="col-md-4" style="padding-top:6%;">
-                  <asp:Label runat="server" ID="Lbl_usrName" CssClass="lable-user">Kristina Gridneva</asp:Label>  
+                  <asp:Label runat="server" ID="Lbl_usrName" CssClass="lable-user" Visible="false"></asp:Label>  
                 </div>
             </div>
         </div>
+        <div class="col-md-12 text-center" style="padding-top:3%; padding-left:3%; padding-right:3%;">
+            <div style="background-color:white;">
+                <asp:Label ID="Lbl_AnswerNameDish" Visible="false"
+                Font-Names="Allerta Stencil" Font-Bold="true" Font-Size="XX-Large" runat="server" Text="Ризотто"></asp:Label>
+            </div>
+            
+        </div>
+        <div class="row" style="margin-top:14%; margin-left:3%; margin-right:3%; background-color:white;">
+            <div class="col-md-6 text-center" style="padding-top:3%;">
+            <asp:Image  runat="server" ID="Img_AnswerImage" Visible="false" 
+                ImageAlign="AbsMiddle" ImageUrl="~/Source/Images/user-icon-png-pnglogocom.png"/>
+        </div>
+        <div class="col-md-6 text-center" style="padding-top:3%; padding-left:5%;">
+            <asp:TextBox ID="TxtBox_AnswerText" runat="server" 
+                Font-Names="Source Sans Pro" Font-Bold="false" Font-Size="X-Large" ReadOnly="true"
+                TextMode="MultiLine" Rows="10" Columns="40" Text="Какой-то текст" 
+                BorderStyle="None" Visible="false"></asp:TextBox>
+            <asp:Button ID="Btn_Suggest" Visible="false" runat="server" CssClass="my-btn btn btn-warning"
+                Text="подобрать продуктовую корзину"/>
+        </div> 
+        </div>
+        
     </div>
 </asp:Content>
 

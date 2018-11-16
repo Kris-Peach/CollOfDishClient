@@ -19,6 +19,11 @@ namespace CollOfDishClient
             string login = TxtBox_login.Text;
             TxtBox_login.Text = "";
             string password = TxtBox_password.Text;
+            //ждем проверку от сервера
+            //если проверка прошла, запускаем следующую страницу
+            Server.Transfer("SearchPage.aspx", true);
+           // Page.ClientScript.RegisterStartupScript(Page.GetType(), "ClosePage", "window.close();", true);
+
         }
     }
 }

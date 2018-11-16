@@ -11,12 +11,21 @@ namespace CollOfDishClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            Lbl_usrName.Text = "Kristina Gridneva";
+            Lbl_usrName.Visible = true;
         }
 
         protected void Btn_search_Click(object sender, EventArgs e)
         {
+            string dishName = TxtBox_search.Text;
 
+            //заполняем элементы отображения результатами от сервера
+
+            //делаем видимым элементы отображения результатов поиска
+            Lbl_AnswerNameDish.Visible = true;
+            Img_AnswerImage.Visible = true;
+            TxtBox_AnswerText.Visible = true;
+            Btn_Suggest.Visible = true;
         }
     }
 }

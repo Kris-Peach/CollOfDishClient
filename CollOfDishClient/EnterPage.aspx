@@ -31,7 +31,7 @@
            
                 <div class="form-group text-center" style="padding-top: 3%;">
                     <label for="usr" class="col-xs-2 control-label">Логин:</label>
-                    <div class="col-xs-10">
+                    <div class="col-xs-6">
                         <asp:TextBox ID="TxtBox_login" placeholder="Введите логин" runat="server" CssClass="form-control" ></asp:TextBox>
                         <asp:RequiredFieldValidator runat="server" ID="valid_login" ControlToValidate="TxtBox_login"
                         Display="Dynamic">Поле пусто</asp:RequiredFieldValidator>
@@ -39,7 +39,7 @@
                 </div>
                 <div class="form-group text-center" style="padding-top:8%;">
                     <label for="inputPassword" class="col-xs-2 control-label">Пароль:</label>
-                    <div class="col-xs-10">
+                    <div class="col-xs-6">
                     <asp:TextBox ID="TxtBox_password" runat="server" CssClass="form-control" placeholder="Введите пароль" TextMode="Password"></asp:TextBox>
                     <asp:RequiredFieldValidator runat="server" ID="valid_pass" ControlToValidate="TxtBox_password"
                         Display="Dynamic">Поле пусто</asp:RequiredFieldValidator>
