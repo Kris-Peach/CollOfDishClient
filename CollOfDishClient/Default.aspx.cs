@@ -44,17 +44,16 @@ namespace CollOfDishClient
 
         protected void BtnEnter_Click(object sender, EventArgs e)
         {
-            Server.Transfer("EnterPage.aspx", true);
-            Page.ClientScript.RegisterStartupScript(Page.GetType(), "ClosePage", "window.close();", true);
-
-            //Page.ClientScript.RegisterStartupScript(
-            //  this.GetType(), "OpenWindow","window.location('EnterPage');", true);
+            
+            Response.Redirect("http://localhost/CollOfDishClient/EnterPage.aspx");
+           
         }
 
         protected void BtnRegistration_Click(object sender, EventArgs e)
         {
-            Server.Transfer("Registration.aspx", true);
-            Page.ClientScript.RegisterStartupScript(Page.GetType(), "ClosePage", "window.close();", true);
+           
+            Response.Redirect("http://localhost/CollOfDishClient/Registration.aspx");
+           
 
         }
     }
