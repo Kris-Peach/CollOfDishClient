@@ -37,6 +37,7 @@
                 <!--<button type="button" class="my-btn btn btn-warning">РЕГИСТРАЦИЯ</button> -->
                 <asp:Button ID="BtnRegistration" runat="server" CssClass="my-btn btn btn-warning" Text="РЕГИСТРАЦИЯ" OnClick="BtnRegistration_Click" />
             </div>
+           
         </div>
         
         <!--<p><b>Название статьи:</b> <asp:TextBox ID="TextBox1" runat="server" Height="20px" Width="219px" BorderStyle="Dotted" Font-Size="Large"></asp:TextBox>

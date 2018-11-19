@@ -110,6 +110,9 @@
     <Content Include="Carts.aspx" />
     <Content Include="EnterPage.aspx" />
     <None Include="Connected Services\ServiceReference1\AgServer1.disco" />
+    <Content Include="Order.aspx" />
+    <Content Include="Payment.aspx" />
+    <Content Include="Scripts\WebForms\index.js" />
     <Content Include="SearchPage.aspx" />
     <Content Include="Source\Images\2.jpg" />
     <Content Include="Source\Images\212783-one-eyeland-roasted_chicken_slices-by-greg-stroube.jpg" />
@@ -228,6 +231,20 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Order.aspx.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Order.aspx.designer.cs">
+      <DependentUpon>Order.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Payment.aspx.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Payment.aspx.designer.cs">
+      <DependentUpon>Payment.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registration.aspx.cs">
       <DependentUpon>Registration.aspx</DependentUpon>
