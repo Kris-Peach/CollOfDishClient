@@ -109,6 +109,7 @@
   <ItemGroup>
     <Content Include="Carts.aspx" />
     <None Include="Connected Services\ServiceReference1\AgServer.disco" />
+    <None Include="Connected Services\ServiceReference1\AgServer1.disco" />
     <Content Include="Delivery.aspx" />
     <Content Include="EnterPage.aspx" />
     <Content Include="Order.aspx" />
@@ -117,29 +118,39 @@
     <Content Include="Source\Images\2.jpg" />
     <Content Include="Source\Images\212783-one-eyeland-roasted_chicken_slices-by-greg-stroube.jpg" />
     <Content Include="Source\Images\348s.jpg" />
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.GetUserResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.HelloWorldResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.ListOfUserRequestResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.outPaymentResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.Payment.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.TestMethodResponse.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.UserRequestLog.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
     <None Include="Connected Services\ServiceReference1\AgServer.wsdl" />
-    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.checkSessionResponse.datasource">
+    <None Include="Connected Services\ServiceReference1\AgServer1.wsdl" />
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.Cart.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.CreateOrderResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.DishObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.GetListOfUsersReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.SearchDishResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.UserEnterResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.UserRegistrationResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.UserRequest.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.СartsSearchResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.GetUserInfoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.User.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />

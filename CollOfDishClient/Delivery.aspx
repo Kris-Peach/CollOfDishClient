@@ -7,7 +7,7 @@
         </div>
         <div class="col-md-12 text-center">
             <asp:Label ID="Lbl_dateDelivery" Font-Names="Source Sans Pro" Font-Size="16pt"
-                runat="server" Text="Дата доставки"></asp:Label>
+                runat="server" ></asp:Label>
         </div>
         <div class="col-md-12 text-center">
             <asp:Button ID="Btn_GoSearch" runat="server" 

@@ -11,14 +11,15 @@ namespace CollOfDishClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            string date = Request.QueryString["date"];
+            Lbl_dateDelivery.Text = "Дата доставки: " + date;
         }
 
         protected void Btn_GoSearch_Click(object sender, EventArgs e)
         {
             string sessionId = (string)Session["myValue"];
-            Uri baseurl = new Uri("http://localhost:52215/");
-            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/SearchPage.aspx");
+            Uri baseurl = new Uri("http://localhost/CollOfDishClient/");
+            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/SearchPage");
             Response.Redirect(newurl.ToString());
         }
     }

@@ -15,16 +15,21 @@ namespace CollOfDishClient.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Payment", Namespace="urn:Agregator")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="DishObject", Namespace="urn:Agregator")]
     [System.SerializableAttribute()]
-    public partial class Payment : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class DishObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int userIdField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DishNameField;
         
-        private double costField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DishDescrField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string ImageURLField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -36,28 +41,41 @@ namespace CollOfDishClient.ServiceReference1 {
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int userId {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string DishName {
             get {
-                return this.userIdField;
+                return this.DishNameField;
             }
             set {
-                if ((this.userIdField.Equals(value) != true)) {
-                    this.userIdField = value;
-                    this.RaisePropertyChanged("userId");
+                if ((object.ReferenceEquals(this.DishNameField, value) != true)) {
+                    this.DishNameField = value;
+                    this.RaisePropertyChanged("DishName");
                 }
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=1)]
-        public double cost {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string DishDescr {
             get {
-                return this.costField;
+                return this.DishDescrField;
             }
             set {
-                if ((this.costField.Equals(value) != true)) {
-                    this.costField = value;
-                    this.RaisePropertyChanged("cost");
+                if ((object.ReferenceEquals(this.DishDescrField, value) != true)) {
+                    this.DishDescrField = value;
+                    this.RaisePropertyChanged("DishDescr");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string ImageURL {
+            get {
+                return this.ImageURLField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ImageURLField, value) != true)) {
+                    this.ImageURLField = value;
+                    this.RaisePropertyChanged("ImageURL");
                 }
             }
         }
@@ -74,19 +92,20 @@ namespace CollOfDishClient.ServiceReference1 {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserRequestLog", Namespace="urn:Agregator")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserRequest", Namespace="urn:Agregator")]
     [System.SerializableAttribute()]
-    public partial class UserRequestLog : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    public partial class UserRequest : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
         [System.NonSerializedAttribute()]
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
-        private int userIdField;
+        private int UserIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string userRequestField;
+        private string DishNameField;
         
-        private System.DateTime dateField;
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateRequestField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
         public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
@@ -99,40 +118,527 @@ namespace CollOfDishClient.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
-        public int userId {
+        public int UserId {
             get {
-                return this.userIdField;
+                return this.UserIdField;
             }
             set {
-                if ((this.userIdField.Equals(value) != true)) {
-                    this.userIdField = value;
-                    this.RaisePropertyChanged("userId");
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string DishName {
+            get {
+                return this.DishNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DishNameField, value) != true)) {
+                    this.DishNameField = value;
+                    this.RaisePropertyChanged("DishName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string DateRequest {
+            get {
+                return this.DateRequestField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateRequestField, value) != true)) {
+                    this.DateRequestField = value;
+                    this.RaisePropertyChanged("DateRequest");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="User", Namespace="urn:Agregator")]
+    [System.SerializableAttribute()]
+    public partial class User : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int UserIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserSessionIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserFirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserSecondNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string UserLoginField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int UserId {
+            get {
+                return this.UserIdField;
+            }
+            set {
+                if ((this.UserIdField.Equals(value) != true)) {
+                    this.UserIdField = value;
+                    this.RaisePropertyChanged("UserId");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
-        public string userRequest {
+        public string UserSessionId {
             get {
-                return this.userRequestField;
+                return this.UserSessionIdField;
             }
             set {
-                if ((object.ReferenceEquals(this.userRequestField, value) != true)) {
-                    this.userRequestField = value;
-                    this.RaisePropertyChanged("userRequest");
+                if ((object.ReferenceEquals(this.UserSessionIdField, value) != true)) {
+                    this.UserSessionIdField = value;
+                    this.RaisePropertyChanged("UserSessionId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string UserFirstName {
+            get {
+                return this.UserFirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserFirstNameField, value) != true)) {
+                    this.UserFirstNameField = value;
+                    this.RaisePropertyChanged("UserFirstName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string UserSecondName {
+            get {
+                return this.UserSecondNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserSecondNameField, value) != true)) {
+                    this.UserSecondNameField = value;
+                    this.RaisePropertyChanged("UserSecondName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string UserLogin {
+            get {
+                return this.UserLoginField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.UserLoginField, value) != true)) {
+                    this.UserLoginField = value;
+                    this.RaisePropertyChanged("UserLogin");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Cart", Namespace="urn:Agregator")]
+    [System.SerializableAttribute()]
+    public partial class Cart : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        private int CartIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private CollOfDishClient.ServiceReference1.Product[] ProductListField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DateField;
+        
+        private double TotalPriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int CartId {
+            get {
+                return this.CartIdField;
+            }
+            set {
+                if ((this.CartIdField.Equals(value) != true)) {
+                    this.CartIdField = value;
+                    this.RaisePropertyChanged("CartId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public CollOfDishClient.ServiceReference1.Product[] ProductList {
+            get {
+                return this.ProductListField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ProductListField, value) != true)) {
+                    this.ProductListField = value;
+                    this.RaisePropertyChanged("ProductList");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DateField, value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public double TotalPrice {
+            get {
+                return this.TotalPriceField;
+            }
+            set {
+                if ((this.TotalPriceField.Equals(value) != true)) {
+                    this.TotalPriceField = value;
+                    this.RaisePropertyChanged("TotalPrice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Product", Namespace="urn:Agregator")]
+    [System.SerializableAttribute()]
+    public partial class Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        private double WeightField;
+        
+        private double PriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public double Weight {
+            get {
+                return this.WeightField;
+            }
+            set {
+                if ((this.WeightField.Equals(value) != true)) {
+                    this.WeightField = value;
+                    this.RaisePropertyChanged("Weight");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
-        public System.DateTime date {
+        public double Price {
             get {
-                return this.dateField;
+                return this.PriceField;
             }
             set {
-                if ((this.dateField.Equals(value) != true)) {
-                    this.dateField = value;
-                    this.RaisePropertyChanged("date");
+                if ((this.PriceField.Equals(value) != true)) {
+                    this.PriceField = value;
+                    this.RaisePropertyChanged("Price");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Address", Namespace="urn:Agregator")]
+    [System.SerializableAttribute()]
+    public partial class Address : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CityField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string StreetField;
+        
+        private int HouseField;
+        
+        private int ApartmentField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CommentField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string City {
+            get {
+                return this.CityField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CityField, value) != true)) {
+                    this.CityField = value;
+                    this.RaisePropertyChanged("City");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string Street {
+            get {
+                return this.StreetField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.StreetField, value) != true)) {
+                    this.StreetField = value;
+                    this.RaisePropertyChanged("Street");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=2)]
+        public int House {
+            get {
+                return this.HouseField;
+            }
+            set {
+                if ((this.HouseField.Equals(value) != true)) {
+                    this.HouseField = value;
+                    this.RaisePropertyChanged("House");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=3)]
+        public int Apartment {
+            get {
+                return this.ApartmentField;
+            }
+            set {
+                if ((this.ApartmentField.Equals(value) != true)) {
+                    this.ApartmentField = value;
+                    this.RaisePropertyChanged("Apartment");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string Comment {
+            get {
+                return this.CommentField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CommentField, value) != true)) {
+                    this.CommentField = value;
+                    this.RaisePropertyChanged("Comment");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="CreditCard", Namespace="urn:Agregator")]
+    [System.SerializableAttribute()]
+    public partial class CreditCard : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CardNumberField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string CardholdersNameField;
+        
+        private int ValidityMMField;
+        
+        private int ValidityYYField;
+        
+        private int CVCField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CardNumber {
+            get {
+                return this.CardNumberField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CardNumberField, value) != true)) {
+                    this.CardNumberField = value;
+                    this.RaisePropertyChanged("CardNumber");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        public string CardholdersName {
+            get {
+                return this.CardholdersNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.CardholdersNameField, value) != true)) {
+                    this.CardholdersNameField = value;
+                    this.RaisePropertyChanged("CardholdersName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ValidityMM {
+            get {
+                return this.ValidityMMField;
+            }
+            set {
+                if ((this.ValidityMMField.Equals(value) != true)) {
+                    this.ValidityMMField = value;
+                    this.RaisePropertyChanged("ValidityMM");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        public int ValidityYY {
+            get {
+                return this.ValidityYYField;
+            }
+            set {
+                if ((this.ValidityYYField.Equals(value) != true)) {
+                    this.ValidityYYField = value;
+                    this.RaisePropertyChanged("ValidityYY");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true, Order=4)]
+        public int CVC {
+            get {
+                return this.CVCField;
+            }
+            set {
+                if ((this.CVCField.Equals(value) != true)) {
+                    this.CVCField = value;
+                    this.RaisePropertyChanged("CVC");
                 }
             }
         }
@@ -151,88 +657,69 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.ServiceModel.ServiceContractAttribute(Namespace="urn:Agregator", ConfigurationName="ServiceReference1.AgregatorServerSoap")]
     public interface AgregatorServerSoap {
         
-        // CODEGEN: Контракт генерации сообщений с именем HelloWorldResult из пространства имен urn:Agregator не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/HelloWorld", ReplyAction="*")]
-        CollOfDishClient.ServiceReference1.HelloWorldResponse HelloWorld(CollOfDishClient.ServiceReference1.HelloWorldRequest request);
+        // CODEGEN: Контракт генерации сообщений с именем userSessionId из пространства имен urn:Agregator не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/SearchDish", ReplyAction="*")]
+        CollOfDishClient.ServiceReference1.SearchDishResponse SearchDish(CollOfDishClient.ServiceReference1.SearchDishRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/HelloWorld", ReplyAction="*")]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.HelloWorldResponse> HelloWorldAsync(CollOfDishClient.ServiceReference1.HelloWorldRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/SearchDish", ReplyAction="*")]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.SearchDishResponse> SearchDishAsync(CollOfDishClient.ServiceReference1.SearchDishRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем name из пространства имен urn:Agregator не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/TestMethod", ReplyAction="*")]
-        CollOfDishClient.ServiceReference1.TestMethodResponse TestMethod(CollOfDishClient.ServiceReference1.TestMethodRequest request);
+        // CODEGEN: Контракт генерации сообщений с именем startDate из пространства имен urn:Agregator не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/GetListOfUsersReq", ReplyAction="*")]
+        CollOfDishClient.ServiceReference1.GetListOfUsersReqResponse GetListOfUsersReq(CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/TestMethod", ReplyAction="*")]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.TestMethodResponse> TestMethodAsync(CollOfDishClient.ServiceReference1.TestMethodRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/GetListOfUsersReq", ReplyAction="*")]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetListOfUsersReqResponse> GetListOfUsersReqAsync(CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/Convert", ReplyAction="*")]
-        double Convert(double Celsius);
+        // CODEGEN: Контракт генерации сообщений с именем userSessionId из пространства имен urn:Agregator не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/UserRegistration", ReplyAction="*")]
+        CollOfDishClient.ServiceReference1.UserRegistrationResponse UserRegistration(CollOfDishClient.ServiceReference1.UserRegistrationRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/Convert", ReplyAction="*")]
-        System.Threading.Tasks.Task<double> ConvertAsync(double Celsius);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/UserRegistration", ReplyAction="*")]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.UserRegistrationResponse> UserRegistrationAsync(CollOfDishClient.ServiceReference1.UserRegistrationRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем firstname из пространства имен urn:Agregator не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/GetUser", ReplyAction="*")]
-        CollOfDishClient.ServiceReference1.GetUserResponse GetUser(CollOfDishClient.ServiceReference1.GetUserRequest request);
+        // CODEGEN: Контракт генерации сообщений с именем userSessionId из пространства имен urn:Agregator не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/UserEnter", ReplyAction="*")]
+        CollOfDishClient.ServiceReference1.UserEnterResponse UserEnter(CollOfDishClient.ServiceReference1.UserEnterRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/GetUser", ReplyAction="*")]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetUserResponse> GetUserAsync(CollOfDishClient.ServiceReference1.GetUserRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/UserEnter", ReplyAction="*")]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.UserEnterResponse> UserEnterAsync(CollOfDishClient.ServiceReference1.UserEnterRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем outPaymentResult из пространства имен urn:Agregator не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/outPayment", ReplyAction="*")]
-        CollOfDishClient.ServiceReference1.outPaymentResponse outPayment(CollOfDishClient.ServiceReference1.outPaymentRequest request);
+        // CODEGEN: Контракт генерации сообщений с именем userSessionId из пространства имен urn:Agregator не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/GetUserInfo", ReplyAction="*")]
+        CollOfDishClient.ServiceReference1.GetUserInfoResponse GetUserInfo(CollOfDishClient.ServiceReference1.GetUserInfoRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/outPayment", ReplyAction="*")]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.outPaymentResponse> outPaymentAsync(CollOfDishClient.ServiceReference1.outPaymentRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/GetUserInfo", ReplyAction="*")]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetUserInfoResponse> GetUserInfoAsync(CollOfDishClient.ServiceReference1.GetUserInfoRequest request);
         
-        // CODEGEN: Контракт генерации сообщений с именем begin из пространства имен urn:Agregator не отмечен как обнуляемый
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/ListOfUserRequest", ReplyAction="*")]
-        CollOfDishClient.ServiceReference1.ListOfUserRequestResponse ListOfUserRequest(CollOfDishClient.ServiceReference1.ListOfUserRequestRequest request);
+        // CODEGEN: Контракт генерации сообщений с именем userSessionId из пространства имен urn:Agregator не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/СartsSearch", ReplyAction="*")]
+        CollOfDishClient.ServiceReference1.СartsSearchResponse СartsSearch(CollOfDishClient.ServiceReference1.СartsSearchRequest request);
         
-        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/ListOfUserRequest", ReplyAction="*")]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.ListOfUserRequestResponse> ListOfUserRequestAsync(CollOfDishClient.ServiceReference1.ListOfUserRequestRequest request);
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/СartsSearch", ReplyAction="*")]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.СartsSearchResponse> СartsSearchAsync(CollOfDishClient.ServiceReference1.СartsSearchRequest request);
+        
+        // CODEGEN: Контракт генерации сообщений с именем userSessionId из пространства имен urn:Agregator не отмечен как обнуляемый
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/CreateOrder", ReplyAction="*")]
+        CollOfDishClient.ServiceReference1.CreateOrderResponse CreateOrder(CollOfDishClient.ServiceReference1.CreateOrderRequest request);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="urn:Agregator/CreateOrder", ReplyAction="*")]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.CreateOrderResponse> CreateOrderAsync(CollOfDishClient.ServiceReference1.CreateOrderRequest request);
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldRequest {
+    public partial class SearchDishRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorld", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.HelloWorldRequestBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SearchDish", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.SearchDishRequestBody Body;
         
-        public HelloWorldRequest() {
+        public SearchDishRequest() {
         }
         
-        public HelloWorldRequest(CollOfDishClient.ServiceReference1.HelloWorldRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class HelloWorldRequestBody {
-        
-        public HelloWorldRequestBody() {
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class HelloWorldResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="HelloWorldResponse", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.HelloWorldResponseBody Body;
-        
-        public HelloWorldResponse() {
-        }
-        
-        public HelloWorldResponse(CollOfDishClient.ServiceReference1.HelloWorldResponseBody Body) {
+        public SearchDishRequest(CollOfDishClient.ServiceReference1.SearchDishRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -241,126 +728,176 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class HelloWorldResponseBody {
+    public partial class SearchDishRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string HelloWorldResult;
-        
-        public HelloWorldResponseBody() {
-        }
-        
-        public HelloWorldResponseBody(string HelloWorldResult) {
-            this.HelloWorldResult = HelloWorldResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class TestMethodRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="TestMethod", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.TestMethodRequestBody Body;
-        
-        public TestMethodRequest() {
-        }
-        
-        public TestMethodRequest(CollOfDishClient.ServiceReference1.TestMethodRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class TestMethodRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string name;
-        
-        public TestMethodRequestBody() {
-        }
-        
-        public TestMethodRequestBody(string name) {
-            this.name = name;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class TestMethodResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="TestMethodResponse", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.TestMethodResponseBody Body;
-        
-        public TestMethodResponse() {
-        }
-        
-        public TestMethodResponse(CollOfDishClient.ServiceReference1.TestMethodResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class TestMethodResponseBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string TestMethodResult;
-        
-        public TestMethodResponseBody() {
-        }
-        
-        public TestMethodResponseBody(string TestMethodResult) {
-            this.TestMethodResult = TestMethodResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetUserRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUser", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.GetUserRequestBody Body;
-        
-        public GetUserRequest() {
-        }
-        
-        public GetUserRequest(CollOfDishClient.ServiceReference1.GetUserRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class GetUserRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int id;
+        public string userSessionId;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string firstname;
+        public string dishName;
+        
+        public SearchDishRequestBody() {
+        }
+        
+        public SearchDishRequestBody(string userSessionId, string dishName) {
+            this.userSessionId = userSessionId;
+            this.dishName = dishName;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class SearchDishResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="SearchDishResponse", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.SearchDishResponseBody Body;
+        
+        public SearchDishResponse() {
+        }
+        
+        public SearchDishResponse(CollOfDishClient.ServiceReference1.SearchDishResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class SearchDishResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CollOfDishClient.ServiceReference1.DishObject SearchDishResult;
+        
+        public SearchDishResponseBody() {
+        }
+        
+        public SearchDishResponseBody(CollOfDishClient.ServiceReference1.DishObject SearchDishResult) {
+            this.SearchDishResult = SearchDishResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetListOfUsersReqRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListOfUsersReq", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.GetListOfUsersReqRequestBody Body;
+        
+        public GetListOfUsersReqRequest() {
+        }
+        
+        public GetListOfUsersReqRequest(CollOfDishClient.ServiceReference1.GetListOfUsersReqRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class GetListOfUsersReqRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string startDate;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string endDate;
+        
+        public GetListOfUsersReqRequestBody() {
+        }
+        
+        public GetListOfUsersReqRequestBody(string startDate, string endDate) {
+            this.startDate = startDate;
+            this.endDate = endDate;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetListOfUsersReqResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetListOfUsersReqResponse", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.GetListOfUsersReqResponseBody Body;
+        
+        public GetListOfUsersReqResponse() {
+        }
+        
+        public GetListOfUsersReqResponse(CollOfDishClient.ServiceReference1.GetListOfUsersReqResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class GetListOfUsersReqResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CollOfDishClient.ServiceReference1.UserRequest[] GetListOfUsersReqResult;
+        
+        public GetListOfUsersReqResponseBody() {
+        }
+        
+        public GetListOfUsersReqResponseBody(CollOfDishClient.ServiceReference1.UserRequest[] GetListOfUsersReqResult) {
+            this.GetListOfUsersReqResult = GetListOfUsersReqResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class UserRegistrationRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UserRegistration", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.UserRegistrationRequestBody Body;
+        
+        public UserRegistrationRequest() {
+        }
+        
+        public UserRegistrationRequest(CollOfDishClient.ServiceReference1.UserRegistrationRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class UserRegistrationRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userSessionId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string userFirstName;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
-        public string secondname;
+        public string userSecondName;
         
-        public GetUserRequestBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=3)]
+        public string userPassword;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public string userLogin;
+        
+        public UserRegistrationRequestBody() {
         }
         
-        public GetUserRequestBody(int id, string firstname, string secondname) {
-            this.id = id;
-            this.firstname = firstname;
-            this.secondname = secondname;
+        public UserRegistrationRequestBody(string userSessionId, string userFirstName, string userSecondName, string userPassword, string userLogin) {
+            this.userSessionId = userSessionId;
+            this.userFirstName = userFirstName;
+            this.userSecondName = userSecondName;
+            this.userPassword = userPassword;
+            this.userLogin = userLogin;
         }
     }
     
@@ -368,15 +905,15 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class GetUserResponse {
+    public partial class UserRegistrationResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUserResponse", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.GetUserResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UserRegistrationResponse", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.UserRegistrationResponseBody Body;
         
-        public GetUserResponse() {
+        public UserRegistrationResponse() {
         }
         
-        public GetUserResponse(CollOfDishClient.ServiceReference1.GetUserResponseBody Body) {
+        public UserRegistrationResponse(CollOfDishClient.ServiceReference1.UserRegistrationResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -385,43 +922,16 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class GetUserResponseBody {
+    public partial class UserRegistrationResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
-        public int GetUserResult;
+        public int UserRegistrationResult;
         
-        public GetUserResponseBody() {
+        public UserRegistrationResponseBody() {
         }
         
-        public GetUserResponseBody(int GetUserResult) {
-            this.GetUserResult = GetUserResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class outPaymentRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="outPayment", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.outPaymentRequestBody Body;
-        
-        public outPaymentRequest() {
-        }
-        
-        public outPaymentRequest(CollOfDishClient.ServiceReference1.outPaymentRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class outPaymentRequestBody {
-        
-        public outPaymentRequestBody() {
+        public UserRegistrationResponseBody(int UserRegistrationResult) {
+            this.UserRegistrationResult = UserRegistrationResult;
         }
     }
     
@@ -429,15 +939,15 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class outPaymentResponse {
+    public partial class UserEnterRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="outPaymentResponse", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.outPaymentResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UserEnter", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.UserEnterRequestBody Body;
         
-        public outPaymentResponse() {
+        public UserEnterRequest() {
         }
         
-        public outPaymentResponse(CollOfDishClient.ServiceReference1.outPaymentResponseBody Body) {
+        public UserEnterRequest(CollOfDishClient.ServiceReference1.UserEnterRequestBody Body) {
             this.Body = Body;
         }
     }
@@ -446,54 +956,24 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class outPaymentResponseBody {
+    public partial class UserEnterRequestBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public CollOfDishClient.ServiceReference1.Payment outPaymentResult;
-        
-        public outPaymentResponseBody() {
-        }
-        
-        public outPaymentResponseBody(CollOfDishClient.ServiceReference1.Payment outPaymentResult) {
-            this.outPaymentResult = outPaymentResult;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ListOfUserRequestRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListOfUserRequest", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.ListOfUserRequestRequestBody Body;
-        
-        public ListOfUserRequestRequest() {
-        }
-        
-        public ListOfUserRequestRequest(CollOfDishClient.ServiceReference1.ListOfUserRequestRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class ListOfUserRequestRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public string begin;
+        public string userSessionId;
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
-        public string end;
+        public string userLogin;
         
-        public ListOfUserRequestRequestBody() {
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public string userPassword;
+        
+        public UserEnterRequestBody() {
         }
         
-        public ListOfUserRequestRequestBody(string begin, string end) {
-            this.begin = begin;
-            this.end = end;
+        public UserEnterRequestBody(string userSessionId, string userLogin, string userPassword) {
+            this.userSessionId = userSessionId;
+            this.userLogin = userLogin;
+            this.userPassword = userPassword;
         }
     }
     
@@ -501,15 +981,15 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class ListOfUserRequestResponse {
+    public partial class UserEnterResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="ListOfUserRequestResponse", Namespace="urn:Agregator", Order=0)]
-        public CollOfDishClient.ServiceReference1.ListOfUserRequestResponseBody Body;
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="UserEnterResponse", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.UserEnterResponseBody Body;
         
-        public ListOfUserRequestResponse() {
+        public UserEnterResponse() {
         }
         
-        public ListOfUserRequestResponse(CollOfDishClient.ServiceReference1.ListOfUserRequestResponseBody Body) {
+        public UserEnterResponse(CollOfDishClient.ServiceReference1.UserEnterResponseBody Body) {
             this.Body = Body;
         }
     }
@@ -518,16 +998,244 @@ namespace CollOfDishClient.ServiceReference1 {
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
     [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
-    public partial class ListOfUserRequestResponseBody {
+    public partial class UserEnterResponseBody {
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public CollOfDishClient.ServiceReference1.UserRequestLog[] ListOfUserRequestResult;
+        [System.Runtime.Serialization.DataMemberAttribute(Order=0)]
+        public int UserEnterResult;
         
-        public ListOfUserRequestResponseBody() {
+        public UserEnterResponseBody() {
         }
         
-        public ListOfUserRequestResponseBody(CollOfDishClient.ServiceReference1.UserRequestLog[] ListOfUserRequestResult) {
-            this.ListOfUserRequestResult = ListOfUserRequestResult;
+        public UserEnterResponseBody(int UserEnterResult) {
+            this.UserEnterResult = UserEnterResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetUserInfoRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUserInfo", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.GetUserInfoRequestBody Body;
+        
+        public GetUserInfoRequest() {
+        }
+        
+        public GetUserInfoRequest(CollOfDishClient.ServiceReference1.GetUserInfoRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class GetUserInfoRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userSessionId;
+        
+        public GetUserInfoRequestBody() {
+        }
+        
+        public GetUserInfoRequestBody(string userSessionId) {
+            this.userSessionId = userSessionId;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class GetUserInfoResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetUserInfoResponse", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.GetUserInfoResponseBody Body;
+        
+        public GetUserInfoResponse() {
+        }
+        
+        public GetUserInfoResponse(CollOfDishClient.ServiceReference1.GetUserInfoResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class GetUserInfoResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CollOfDishClient.ServiceReference1.User GetUserInfoResult;
+        
+        public GetUserInfoResponseBody() {
+        }
+        
+        public GetUserInfoResponseBody(CollOfDishClient.ServiceReference1.User GetUserInfoResult) {
+            this.GetUserInfoResult = GetUserInfoResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class СartsSearchRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="СartsSearch", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.СartsSearchRequestBody Body;
+        
+        public СartsSearchRequest() {
+        }
+        
+        public СartsSearchRequest(CollOfDishClient.ServiceReference1.СartsSearchRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class СartsSearchRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userSessionId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string dishName;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=2)]
+        public int numberOfCarts;
+        
+        public СartsSearchRequestBody() {
+        }
+        
+        public СartsSearchRequestBody(string userSessionId, string dishName, int numberOfCarts) {
+            this.userSessionId = userSessionId;
+            this.dishName = dishName;
+            this.numberOfCarts = numberOfCarts;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class СartsSearchResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="СartsSearchResponse", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.СartsSearchResponseBody Body;
+        
+        public СartsSearchResponse() {
+        }
+        
+        public СartsSearchResponse(CollOfDishClient.ServiceReference1.СartsSearchResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class СartsSearchResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public CollOfDishClient.ServiceReference1.Cart[] СartsSearchResult;
+        
+        public СartsSearchResponseBody() {
+        }
+        
+        public СartsSearchResponseBody(CollOfDishClient.ServiceReference1.Cart[] СartsSearchResult) {
+            this.СartsSearchResult = СartsSearchResult;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateOrderRequest {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateOrder", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.CreateOrderRequestBody Body;
+        
+        public CreateOrderRequest() {
+        }
+        
+        public CreateOrderRequest(CollOfDishClient.ServiceReference1.CreateOrderRequestBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class CreateOrderRequestBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string userSessionId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=1)]
+        public int cartId;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        public CollOfDishClient.ServiceReference1.Address deliveryAddress;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(Order=3)]
+        public double orderCoast;
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=4)]
+        public CollOfDishClient.ServiceReference1.CreditCard cresitCard;
+        
+        public CreateOrderRequestBody() {
+        }
+        
+        public CreateOrderRequestBody(string userSessionId, int cartId, CollOfDishClient.ServiceReference1.Address deliveryAddress, double orderCoast, CollOfDishClient.ServiceReference1.CreditCard cresitCard) {
+            this.userSessionId = userSessionId;
+            this.cartId = cartId;
+            this.deliveryAddress = deliveryAddress;
+            this.orderCoast = orderCoast;
+            this.cresitCard = cresitCard;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
+    public partial class CreateOrderResponse {
+        
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="CreateOrderResponse", Namespace="urn:Agregator", Order=0)]
+        public CollOfDishClient.ServiceReference1.CreateOrderResponseBody Body;
+        
+        public CreateOrderResponse() {
+        }
+        
+        public CreateOrderResponse(CollOfDishClient.ServiceReference1.CreateOrderResponseBody Body) {
+            this.Body = Body;
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="urn:Agregator")]
+    public partial class CreateOrderResponseBody {
+        
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string CreateOrderResult;
+        
+        public CreateOrderResponseBody() {
+        }
+        
+        public CreateOrderResponseBody(string CreateOrderResult) {
+            this.CreateOrderResult = CreateOrderResult;
         }
     }
     
@@ -559,138 +1267,206 @@ namespace CollOfDishClient.ServiceReference1 {
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CollOfDishClient.ServiceReference1.HelloWorldResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.HelloWorld(CollOfDishClient.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorld(request);
+        CollOfDishClient.ServiceReference1.SearchDishResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.SearchDish(CollOfDishClient.ServiceReference1.SearchDishRequest request) {
+            return base.Channel.SearchDish(request);
         }
         
-        public string HelloWorld() {
-            CollOfDishClient.ServiceReference1.HelloWorldRequest inValue = new CollOfDishClient.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.HelloWorldRequestBody();
-            CollOfDishClient.ServiceReference1.HelloWorldResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).HelloWorld(inValue);
-            return retVal.Body.HelloWorldResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.HelloWorldResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.HelloWorldAsync(CollOfDishClient.ServiceReference1.HelloWorldRequest request) {
-            return base.Channel.HelloWorldAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.HelloWorldResponse> HelloWorldAsync() {
-            CollOfDishClient.ServiceReference1.HelloWorldRequest inValue = new CollOfDishClient.ServiceReference1.HelloWorldRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.HelloWorldRequestBody();
-            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).HelloWorldAsync(inValue);
+        public CollOfDishClient.ServiceReference1.DishObject SearchDish(string userSessionId, string dishName) {
+            CollOfDishClient.ServiceReference1.SearchDishRequest inValue = new CollOfDishClient.ServiceReference1.SearchDishRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.SearchDishRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.dishName = dishName;
+            CollOfDishClient.ServiceReference1.SearchDishResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).SearchDish(inValue);
+            return retVal.Body.SearchDishResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CollOfDishClient.ServiceReference1.TestMethodResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.TestMethod(CollOfDishClient.ServiceReference1.TestMethodRequest request) {
-            return base.Channel.TestMethod(request);
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.SearchDishResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.SearchDishAsync(CollOfDishClient.ServiceReference1.SearchDishRequest request) {
+            return base.Channel.SearchDishAsync(request);
         }
         
-        public string TestMethod(string name) {
-            CollOfDishClient.ServiceReference1.TestMethodRequest inValue = new CollOfDishClient.ServiceReference1.TestMethodRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.TestMethodRequestBody();
-            inValue.Body.name = name;
-            CollOfDishClient.ServiceReference1.TestMethodResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).TestMethod(inValue);
-            return retVal.Body.TestMethodResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.TestMethodResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.TestMethodAsync(CollOfDishClient.ServiceReference1.TestMethodRequest request) {
-            return base.Channel.TestMethodAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.TestMethodResponse> TestMethodAsync(string name) {
-            CollOfDishClient.ServiceReference1.TestMethodRequest inValue = new CollOfDishClient.ServiceReference1.TestMethodRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.TestMethodRequestBody();
-            inValue.Body.name = name;
-            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).TestMethodAsync(inValue);
-        }
-        
-        public double Convert(double Celsius) {
-            return base.Channel.Convert(Celsius);
-        }
-        
-        public System.Threading.Tasks.Task<double> ConvertAsync(double Celsius) {
-            return base.Channel.ConvertAsync(Celsius);
+        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.SearchDishResponse> SearchDishAsync(string userSessionId, string dishName) {
+            CollOfDishClient.ServiceReference1.SearchDishRequest inValue = new CollOfDishClient.ServiceReference1.SearchDishRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.SearchDishRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.dishName = dishName;
+            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).SearchDishAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CollOfDishClient.ServiceReference1.GetUserResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.GetUser(CollOfDishClient.ServiceReference1.GetUserRequest request) {
-            return base.Channel.GetUser(request);
+        CollOfDishClient.ServiceReference1.GetListOfUsersReqResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.GetListOfUsersReq(CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest request) {
+            return base.Channel.GetListOfUsersReq(request);
         }
         
-        public int GetUser(int id, string firstname, string secondname) {
-            CollOfDishClient.ServiceReference1.GetUserRequest inValue = new CollOfDishClient.ServiceReference1.GetUserRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.GetUserRequestBody();
-            inValue.Body.id = id;
-            inValue.Body.firstname = firstname;
-            inValue.Body.secondname = secondname;
-            CollOfDishClient.ServiceReference1.GetUserResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).GetUser(inValue);
-            return retVal.Body.GetUserResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetUserResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.GetUserAsync(CollOfDishClient.ServiceReference1.GetUserRequest request) {
-            return base.Channel.GetUserAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetUserResponse> GetUserAsync(int id, string firstname, string secondname) {
-            CollOfDishClient.ServiceReference1.GetUserRequest inValue = new CollOfDishClient.ServiceReference1.GetUserRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.GetUserRequestBody();
-            inValue.Body.id = id;
-            inValue.Body.firstname = firstname;
-            inValue.Body.secondname = secondname;
-            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).GetUserAsync(inValue);
+        public CollOfDishClient.ServiceReference1.UserRequest[] GetListOfUsersReq(string startDate, string endDate) {
+            CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest inValue = new CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.GetListOfUsersReqRequestBody();
+            inValue.Body.startDate = startDate;
+            inValue.Body.endDate = endDate;
+            CollOfDishClient.ServiceReference1.GetListOfUsersReqResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).GetListOfUsersReq(inValue);
+            return retVal.Body.GetListOfUsersReqResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CollOfDishClient.ServiceReference1.outPaymentResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.outPayment(CollOfDishClient.ServiceReference1.outPaymentRequest request) {
-            return base.Channel.outPayment(request);
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetListOfUsersReqResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.GetListOfUsersReqAsync(CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest request) {
+            return base.Channel.GetListOfUsersReqAsync(request);
         }
         
-        public CollOfDishClient.ServiceReference1.Payment outPayment() {
-            CollOfDishClient.ServiceReference1.outPaymentRequest inValue = new CollOfDishClient.ServiceReference1.outPaymentRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.outPaymentRequestBody();
-            CollOfDishClient.ServiceReference1.outPaymentResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).outPayment(inValue);
-            return retVal.Body.outPaymentResult;
-        }
-        
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.outPaymentResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.outPaymentAsync(CollOfDishClient.ServiceReference1.outPaymentRequest request) {
-            return base.Channel.outPaymentAsync(request);
-        }
-        
-        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.outPaymentResponse> outPaymentAsync() {
-            CollOfDishClient.ServiceReference1.outPaymentRequest inValue = new CollOfDishClient.ServiceReference1.outPaymentRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.outPaymentRequestBody();
-            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).outPaymentAsync(inValue);
+        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetListOfUsersReqResponse> GetListOfUsersReqAsync(string startDate, string endDate) {
+            CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest inValue = new CollOfDishClient.ServiceReference1.GetListOfUsersReqRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.GetListOfUsersReqRequestBody();
+            inValue.Body.startDate = startDate;
+            inValue.Body.endDate = endDate;
+            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).GetListOfUsersReqAsync(inValue);
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CollOfDishClient.ServiceReference1.ListOfUserRequestResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.ListOfUserRequest(CollOfDishClient.ServiceReference1.ListOfUserRequestRequest request) {
-            return base.Channel.ListOfUserRequest(request);
+        CollOfDishClient.ServiceReference1.UserRegistrationResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.UserRegistration(CollOfDishClient.ServiceReference1.UserRegistrationRequest request) {
+            return base.Channel.UserRegistration(request);
         }
         
-        public CollOfDishClient.ServiceReference1.UserRequestLog[] ListOfUserRequest(string begin, string end) {
-            CollOfDishClient.ServiceReference1.ListOfUserRequestRequest inValue = new CollOfDishClient.ServiceReference1.ListOfUserRequestRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.ListOfUserRequestRequestBody();
-            inValue.Body.begin = begin;
-            inValue.Body.end = end;
-            CollOfDishClient.ServiceReference1.ListOfUserRequestResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).ListOfUserRequest(inValue);
-            return retVal.Body.ListOfUserRequestResult;
+        public int UserRegistration(string userSessionId, string userFirstName, string userSecondName, string userPassword, string userLogin) {
+            CollOfDishClient.ServiceReference1.UserRegistrationRequest inValue = new CollOfDishClient.ServiceReference1.UserRegistrationRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.UserRegistrationRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.userFirstName = userFirstName;
+            inValue.Body.userSecondName = userSecondName;
+            inValue.Body.userPassword = userPassword;
+            inValue.Body.userLogin = userLogin;
+            CollOfDishClient.ServiceReference1.UserRegistrationResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).UserRegistration(inValue);
+            return retVal.Body.UserRegistrationResult;
         }
         
         [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.ListOfUserRequestResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.ListOfUserRequestAsync(CollOfDishClient.ServiceReference1.ListOfUserRequestRequest request) {
-            return base.Channel.ListOfUserRequestAsync(request);
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.UserRegistrationResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.UserRegistrationAsync(CollOfDishClient.ServiceReference1.UserRegistrationRequest request) {
+            return base.Channel.UserRegistrationAsync(request);
         }
         
-        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.ListOfUserRequestResponse> ListOfUserRequestAsync(string begin, string end) {
-            CollOfDishClient.ServiceReference1.ListOfUserRequestRequest inValue = new CollOfDishClient.ServiceReference1.ListOfUserRequestRequest();
-            inValue.Body = new CollOfDishClient.ServiceReference1.ListOfUserRequestRequestBody();
-            inValue.Body.begin = begin;
-            inValue.Body.end = end;
-            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).ListOfUserRequestAsync(inValue);
+        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.UserRegistrationResponse> UserRegistrationAsync(string userSessionId, string userFirstName, string userSecondName, string userPassword, string userLogin) {
+            CollOfDishClient.ServiceReference1.UserRegistrationRequest inValue = new CollOfDishClient.ServiceReference1.UserRegistrationRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.UserRegistrationRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.userFirstName = userFirstName;
+            inValue.Body.userSecondName = userSecondName;
+            inValue.Body.userPassword = userPassword;
+            inValue.Body.userLogin = userLogin;
+            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).UserRegistrationAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CollOfDishClient.ServiceReference1.UserEnterResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.UserEnter(CollOfDishClient.ServiceReference1.UserEnterRequest request) {
+            return base.Channel.UserEnter(request);
+        }
+        
+        public int UserEnter(string userSessionId, string userLogin, string userPassword) {
+            CollOfDishClient.ServiceReference1.UserEnterRequest inValue = new CollOfDishClient.ServiceReference1.UserEnterRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.UserEnterRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.userLogin = userLogin;
+            inValue.Body.userPassword = userPassword;
+            CollOfDishClient.ServiceReference1.UserEnterResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).UserEnter(inValue);
+            return retVal.Body.UserEnterResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.UserEnterResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.UserEnterAsync(CollOfDishClient.ServiceReference1.UserEnterRequest request) {
+            return base.Channel.UserEnterAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.UserEnterResponse> UserEnterAsync(string userSessionId, string userLogin, string userPassword) {
+            CollOfDishClient.ServiceReference1.UserEnterRequest inValue = new CollOfDishClient.ServiceReference1.UserEnterRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.UserEnterRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.userLogin = userLogin;
+            inValue.Body.userPassword = userPassword;
+            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).UserEnterAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CollOfDishClient.ServiceReference1.GetUserInfoResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.GetUserInfo(CollOfDishClient.ServiceReference1.GetUserInfoRequest request) {
+            return base.Channel.GetUserInfo(request);
+        }
+        
+        public CollOfDishClient.ServiceReference1.User GetUserInfo(string userSessionId) {
+            CollOfDishClient.ServiceReference1.GetUserInfoRequest inValue = new CollOfDishClient.ServiceReference1.GetUserInfoRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.GetUserInfoRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            CollOfDishClient.ServiceReference1.GetUserInfoResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).GetUserInfo(inValue);
+            return retVal.Body.GetUserInfoResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetUserInfoResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.GetUserInfoAsync(CollOfDishClient.ServiceReference1.GetUserInfoRequest request) {
+            return base.Channel.GetUserInfoAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.GetUserInfoResponse> GetUserInfoAsync(string userSessionId) {
+            CollOfDishClient.ServiceReference1.GetUserInfoRequest inValue = new CollOfDishClient.ServiceReference1.GetUserInfoRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.GetUserInfoRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).GetUserInfoAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CollOfDishClient.ServiceReference1.СartsSearchResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.СartsSearch(CollOfDishClient.ServiceReference1.СartsSearchRequest request) {
+            return base.Channel.СartsSearch(request);
+        }
+        
+        public CollOfDishClient.ServiceReference1.Cart[] СartsSearch(string userSessionId, string dishName, int numberOfCarts) {
+            CollOfDishClient.ServiceReference1.СartsSearchRequest inValue = new CollOfDishClient.ServiceReference1.СartsSearchRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.СartsSearchRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.dishName = dishName;
+            inValue.Body.numberOfCarts = numberOfCarts;
+            CollOfDishClient.ServiceReference1.СartsSearchResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).СartsSearch(inValue);
+            return retVal.Body.СartsSearchResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.СartsSearchResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.СartsSearchAsync(CollOfDishClient.ServiceReference1.СartsSearchRequest request) {
+            return base.Channel.СartsSearchAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.СartsSearchResponse> СartsSearchAsync(string userSessionId, string dishName, int numberOfCarts) {
+            CollOfDishClient.ServiceReference1.СartsSearchRequest inValue = new CollOfDishClient.ServiceReference1.СartsSearchRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.СartsSearchRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.dishName = dishName;
+            inValue.Body.numberOfCarts = numberOfCarts;
+            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).СartsSearchAsync(inValue);
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        CollOfDishClient.ServiceReference1.CreateOrderResponse CollOfDishClient.ServiceReference1.AgregatorServerSoap.CreateOrder(CollOfDishClient.ServiceReference1.CreateOrderRequest request) {
+            return base.Channel.CreateOrder(request);
+        }
+        
+        public string CreateOrder(string userSessionId, int cartId, CollOfDishClient.ServiceReference1.Address deliveryAddress, double orderCoast, CollOfDishClient.ServiceReference1.CreditCard cresitCard) {
+            CollOfDishClient.ServiceReference1.CreateOrderRequest inValue = new CollOfDishClient.ServiceReference1.CreateOrderRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.CreateOrderRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.cartId = cartId;
+            inValue.Body.deliveryAddress = deliveryAddress;
+            inValue.Body.orderCoast = orderCoast;
+            inValue.Body.cresitCard = cresitCard;
+            CollOfDishClient.ServiceReference1.CreateOrderResponse retVal = ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).CreateOrder(inValue);
+            return retVal.Body.CreateOrderResult;
+        }
+        
+        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
+        System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.CreateOrderResponse> CollOfDishClient.ServiceReference1.AgregatorServerSoap.CreateOrderAsync(CollOfDishClient.ServiceReference1.CreateOrderRequest request) {
+            return base.Channel.CreateOrderAsync(request);
+        }
+        
+        public System.Threading.Tasks.Task<CollOfDishClient.ServiceReference1.CreateOrderResponse> CreateOrderAsync(string userSessionId, int cartId, CollOfDishClient.ServiceReference1.Address deliveryAddress, double orderCoast, CollOfDishClient.ServiceReference1.CreditCard cresitCard) {
+            CollOfDishClient.ServiceReference1.CreateOrderRequest inValue = new CollOfDishClient.ServiceReference1.CreateOrderRequest();
+            inValue.Body = new CollOfDishClient.ServiceReference1.CreateOrderRequestBody();
+            inValue.Body.userSessionId = userSessionId;
+            inValue.Body.cartId = cartId;
+            inValue.Body.deliveryAddress = deliveryAddress;
+            inValue.Body.orderCoast = orderCoast;
+            inValue.Body.cresitCard = cresitCard;
+            return ((CollOfDishClient.ServiceReference1.AgregatorServerSoap)(this)).CreateOrderAsync(inValue);
         }
     }
 }

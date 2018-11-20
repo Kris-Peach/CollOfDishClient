@@ -4,30 +4,31 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CollOfDishClient.ServiceReference1;
 
 namespace CollOfDishClient
 {
     public partial class Carts : System.Web.UI.Page
     {
+        protected AgregatorServerSoapClient server;
         protected void Page_Load(object sender, EventArgs e)
         {
-            Lbl_dishName.Text = "Мы подобрали наборы продуктов для Блюда:";
-
-            Create_Table_Cars(2, 3, "Список ингридиентов");
-
-            ListItem item1 = new ListItem("Корзина 1", "20");
-            ListItem item2 = new ListItem("Корзина 2", "40");
-            Rbl_listOfCarts.Items.Add(item1);
-            Rbl_listOfCarts.Items.Add(item2);
+            server = new AgregatorServerSoapClient();
+            string sessionId = (string)Session["myValue"];
+            string dishName = Request.QueryString["dish"];
+            int servings = Int32.Parse( Request.QueryString["servings"]);
+            Cart[] carts = server.СartsSearch(sessionId,dishName,servings);
+            Lbl_dishName.Text = "Мы подобрали наборы продуктов по вашему запросу:";
             
-
-
+            Create_Table_Cars(carts.Length, 3, carts);
+            Create_Radiobutton_List(carts);
+            
         }
 
-        protected void Create_Table_Cars(int row, int col, string text)
+        protected void Create_Table_Cars(int row, int col, Cart[] carts)
         {
             int num_car = 1;
-            int cost = 300;
+            
             TableHeaderRow _headerrow = new TableHeaderRow();
             for (int i=0; i<row; i++)
             {
@@ -41,10 +42,10 @@ namespace CollOfDishClient
                             _cell.Text = "Корзина " + num_car.ToString();
                             break;
                         case 1:
-                            _cell.Text = text;
+                            _cell.Text = ListProducts(carts[i]); ;
                             break;
                         case 2:
-                            _cell.Text = cost.ToString() + "руб.";
+                            _cell.Text = carts[i].TotalPrice.ToString() + "руб.";
                             break;
                     }
                     _row.Cells.Add(_cell);
@@ -74,11 +75,46 @@ namespace CollOfDishClient
             return;
         }
 
+        protected string ListProducts(Cart cart)
+        {
+            Product[] list_p = cart.ProductList;
+            string result="";
+            string tmp = "";
+            for(int i=0; i<list_p.Length; i++)
+            {
+                tmp = result;
+                result = tmp + list_p[i].Name +" ";
+                
+            }
+            return result;
+        }
+
+        protected void Create_Radiobutton_List(Cart[] carts)
+        {
+            int count = 1;
+            for(int i=0; i<carts.Length; i++)
+            {
+                string name = "Корзина " + count.ToString();
+                string id = carts[i].CartId.ToString() + "/";
+                string cost = carts[i].TotalPrice.ToString();
+                string value = id + cost;
+                ListItem item = new ListItem(name, value);
+                Rbl_listOfCarts.Items.Add(item);
+                count++;
+            }
+            
+        }
+
         protected void Btn_Order_Click(object sender, EventArgs e)
         {
             string sessionId = (string)Session["myValue"];
-            Uri baseurl = new Uri("http://localhost:52215/");
-            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/Order.aspx");
+            string parse = Rbl_listOfCarts.SelectedItem.Value;
+            string[] words = parse.Split('/');
+            string cartId = words[0];
+            string cost = words[1];
+            Uri baseurl = new Uri("http://localhost/CollOfDishClient/");
+            Uri newurl = new Uri(baseurl, "(S(" + sessionId + 
+                "))/Order?cartId="+cartId+"&cost="+cost);
             Response.Redirect(newurl.ToString());
         }
     }

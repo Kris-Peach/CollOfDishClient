@@ -19,11 +19,11 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:50089/AgServer.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="AgServer1.disco" MetadataType="Disco" ID="7602aad1-2502-4afb-8f56-245fcee21776" SourceId="1" SourceUrl="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx?disco" />
-    <MetadataFile FileName="AgServer1.wsdl" MetadataType="Wsdl" ID="84ec19db-42ff-4a89-865a-201b85065c7b" SourceId="1" SourceUrl="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx?wsdl" />
+    <MetadataFile FileName="AgServer1.disco" MetadataType="Disco" ID="61c35846-f2a2-4c04-a3df-5ee8e9851527" SourceId="1" SourceUrl="http://localhost:50089/AgServer.asmx?disco" />
+    <MetadataFile FileName="AgServer1.wsdl" MetadataType="Wsdl" ID="18b72397-74c2-443c-b1ee-646bbdfb5ce9" SourceId="1" SourceUrl="http://localhost:50089/AgServer.asmx?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

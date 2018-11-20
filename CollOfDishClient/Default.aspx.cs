@@ -21,18 +21,10 @@ namespace CollOfDishClient
             answer = info.client.checkSession(info.key);
             Lbl_1.Text = answer;*/
         }
-        private class Info //Вложеный класс, который содержит информацию для соединения
-        {
-            public string key;
-            public AgregatorServerSoapClient client;
-            public Info(string k)
-            {
-                key = k;
-            }
-        }
+        
         protected void Button2_Click(object sender, EventArgs e) //редактировать
         {
-            Info info = new Info(TextBox1.Text);
+            /*Info info = new Info(TextBox1.Text);
             info.client = new AgregatorServerSoapClient ();
             string answer;
             //answer.Code_status = 200;
@@ -46,15 +38,15 @@ namespace CollOfDishClient
                 else { Label1.Text = "Укажите название статьи!!"; }
             }
             Label1.Text = answer;
-
+            */
         }
 
         protected void BtnEnter_Click(object sender, EventArgs e)
         {
             string sessionId = (string)Session["myValue"];
 
-            Uri baseurl = new Uri("http://localhost:52215/");
-            Uri newurl = new Uri(baseurl, "(S("+sessionId + "))/EnterPage.aspx");
+            Uri baseurl = new Uri("http://localhost/CollOfDishClient/");
+            Uri newurl = new Uri(baseurl, "(S("+sessionId + "))/EnterPage");
             Response.Redirect(newurl.ToString());
            
         }
@@ -62,8 +54,8 @@ namespace CollOfDishClient
         protected void BtnRegistration_Click(object sender, EventArgs e)
         {
             string sessionId = (string)Session["myValue"];
-            Uri baseurl = new Uri("http://localhost:52215/");
-            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/Registration.aspx");
+            Uri baseurl = new Uri("http://localhost/CollOfDishClient/");
+            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/Registration");
             Response.Redirect(newurl.ToString());
             
            

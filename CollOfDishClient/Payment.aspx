@@ -15,7 +15,7 @@
             <div id="shadow"></div>
             <div id="image-container">
               <span id="amount">Оплата: <strong><asp:Label ID="Lbl_cost" runat="server"
-                 Text="300p." Visible="true" ></asp:Label></strong></span>
+                  Visible="true" ></asp:Label></strong></span>
               <span id="card-image">
       
                </span>

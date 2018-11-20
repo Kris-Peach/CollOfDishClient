@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-
+using CollOfDishClient.ServiceReference1;
 namespace CollOfDishClient
 {
     public partial class About : Page
@@ -13,18 +13,40 @@ namespace CollOfDishClient
         {
             
         }
-
+        private class Info //Вложеный класс, который содержит информацию для соединения
+        {
+            public string login;
+            public string password;
+            public string sessionId;
+            public AgregatorServerSoapClient client;
+            public Info(string sesId, string log, string pass)
+            {
+                login = log;
+                password = pass;
+                sessionId = sesId;
+            }
+        }
         protected void Btn_login_Click(object sender, EventArgs e)
         {
-            string login = TxtBox_login.Text;
-            TxtBox_login.Text = "";
-            string password = TxtBox_password.Text;
-            //ждем проверку от сервера
-            //если проверка прошла, запускаем следующую страницу
             string sessionId = (string)Session["myValue"];
-            Uri baseurl = new Uri("http://localhost:52215/");
-            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/SearchPage.aspx");
-            Response.Redirect(newurl.ToString());
+            
+            //ждем проверку от сервера
+            Info info = new Info(sessionId, TxtBox_login.Text, TxtBox_password.Text);
+            info.client = new AgregatorServerSoapClient();
+            int result = info.client.UserEnter(info.sessionId, info.login, info.password);
+            //если проверка прошла, запускаем следующую страницу
+            if (result == 200)
+            {
+                Uri baseurl = new Uri("http://localhost/CollOfDishClient/");
+                Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/SearchPage");
+                Response.Redirect(newurl.ToString());
+            }
+            else
+            {
+                Lbl_warning.Text = "Неверный логин или пароль";
+                Lbl_warning.Visible = true;
+            }
+            
            
 
         }

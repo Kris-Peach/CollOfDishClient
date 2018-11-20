@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="sqP8qv0ND78OaPW1G+2h7O9YV1M=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="/2F0FfOsBs1I6FqOtAaeeDsX2pY=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="AgregatorServerSoap">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="AgregatorServerSoap" contract="ServiceReference1.AgregatorServerSoap" bindingType="basicHttpBinding" address="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx" bindingConfiguration="AgregatorServerSoap">
+    <endpoint name="AgregatorServerSoap" contract="ServiceReference1.AgregatorServerSoap" bindingType="basicHttpBinding" address="http://localhost:50089/AgServer.asmx" bindingConfiguration="AgregatorServerSoap">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx</serializedValue>
+          <serializedValue>http://localhost:50089/AgServer.asmx</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

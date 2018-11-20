@@ -54,15 +54,25 @@
             <div style="background-color:white; display:-webkit-box;">
                 <div class="col-md-6 text-center" style="padding-top:3%;">
                 <asp:Image  runat="server" ID="Img_AnswerImage" Visible="false" 
-                ImageAlign="AbsMiddle" ImageUrl="~/Source/Images/user-icon-png-pnglogocom.png"/>
+                ImageAlign="AbsMiddle" />
                 </div>
                 <div class="col-md-6 text-center" style="padding-top:3%; padding-left:5%;">
                 <asp:TextBox ID="TxtBox_AnswerText" runat="server" 
                 Font-Names="Source Sans Pro" Font-Bold="false" Font-Size="X-Large" ReadOnly="true"
                 TextMode="MultiLine" Rows="10" Columns="40" Text="Какой-то текст" 
                 BorderStyle="None" Visible="false"></asp:TextBox>
-                <asp:Button ID="Btn_Suggest" Visible="false" runat="server" CssClass="my-btn btn btn-warning"
-                Text="подобрать продуктовую корзину" OnClick="Btn_Suggest_Click"/>
+                <asp:Label ID="Lbl_suggest" Text="Мы можем подобрать ингридиенты для этого блюда. Укажите количество порций:" 
+                    runat="server" Visible="false" Font-Names="Source Sans Pro" Font-Size="14pt"></asp:Label>
+                    <asp:TextBox ID="TxtBox_servings" Visible="false" Text="1" Width="60"  
+                        style="text-align:center" TextMode="Number" runat="server"></asp:TextBox>
+                    <asp:RegularExpressionValidator runat ="server" ID="valid_servings"
+                        ControlToValidate="TxtBox_servings" ValidationExpression="[1-9]" Display="Dynamic">Укажите число</asp:RegularExpressionValidator> 
+                    <div class="text-center" style="padding-top:2%; padding-bottom:5%;">
+                        <asp:Button ID="Btn_Suggest" Visible="false" runat="server" CssClass="my-btn btn btn-warning"
+                    Text="подобрать продуктовую корзину" OnClick="Btn_Suggest_Click"/>
+                    
+                    </div>
+                    
                 </div> 
             </div>
             

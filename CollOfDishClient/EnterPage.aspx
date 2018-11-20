@@ -45,12 +45,17 @@
                         Display="Dynamic">Поле пусто</asp:RequiredFieldValidator>
                     </div>
                 </div>
+                
                 <div class="form-group" style="padding-top:10%;">
                     <div class="col-xs-offset-3 col-xs-10">
                         <asp:Button ID="Btn_login" runat="server" CausesValidation="true" CssClass="my-btn btn btn-warning" Text="войти" OnClick="Btn_login_Click"/>
                     </div>
                 </div>
-           
+                <div class="form-group" style="padding-top:3%;">
+                    <div class="col-xs-offset-3 col-xs-10">
+                        <asp:Label ID="Lbl_warning" Visible="false" runat="server"></asp:Label>
+                    </div>
+                </div>
         </div>
         
     </div>

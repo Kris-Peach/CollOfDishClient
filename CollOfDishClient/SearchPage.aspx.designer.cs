@@ -76,6 +76,33 @@ namespace CollOfDishClient {
         protected global::System.Web.UI.WebControls.TextBox TxtBox_AnswerText;
         
         /// <summary>
+        /// Lbl_suggest элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Lbl_suggest;
+        
+        /// <summary>
+        /// TxtBox_servings элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtBox_servings;
+        
+        /// <summary>
+        /// valid_servings элемент управления.
+        /// </summary>
+        /// <remarks>
+        /// Автоматически создаваемое поле.
+        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RegularExpressionValidator valid_servings;
+        
+        /// <summary>
         /// Btn_Suggest элемент управления.
         /// </summary>
         /// <remarks>
