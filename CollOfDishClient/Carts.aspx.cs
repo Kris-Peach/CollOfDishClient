@@ -76,7 +76,10 @@ namespace CollOfDishClient
 
         protected void Btn_Order_Click(object sender, EventArgs e)
         {
-
+            string sessionId = (string)Session["myValue"];
+            Uri baseurl = new Uri("http://localhost:52215/");
+            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/Order.aspx");
+            Response.Redirect(newurl.ToString());
         }
     }
 }

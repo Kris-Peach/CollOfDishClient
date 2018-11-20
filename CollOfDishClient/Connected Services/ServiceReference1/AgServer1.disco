@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<discovery xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://schemas.xmlsoap.org/disco/">
-  <contractRef ref="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx?wsdl" docRef="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
-  <soap address="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx" xmlns:q1="urn:Agregator" binding="q1:AgregatorServerSoap" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-  <soap address="http://localhost/WebsiteDeployment/AgregatorServer/AgregatorServer/AgServer.asmx" xmlns:q2="urn:Agregator" binding="q2:AgregatorServerSoap12" xmlns="http://schemas.xmlsoap.org/disco/soap/" />
-</discovery>

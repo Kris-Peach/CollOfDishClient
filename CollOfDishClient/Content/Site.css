@@ -65,11 +65,11 @@ select
     text-align: center;
     font-weight: 700;
     font-family: 'Allerta Stencil', sans-serif;
-    letter-spacing: 1px;
+    letter-spacing: 1px
 }
 
 .galary{
-    padding-top: 3%;
+    padding-top: 5%;
     height: 30%;
 }
 
@@ -89,7 +89,7 @@ select
 }
 
 .btn-on-home-page{
-    padding-top: 25%;
+    padding-top: 5%;
 }
 
 .btn-search {

@@ -3,16 +3,18 @@
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
     <div class="row">
-        <div class="main-title">
+        <div class="col-md-12 text-center">
             <div class="title-client">
                 <p> COLLOFDISH
             </div>
+        </div><!--<div class="main-title">-->
+        <div class="col-md-12 text-center">
             <div class="under-title">
                 <p>- Find Your Dish -</p>
             </div>
-            
-        </div>
-        <div class="galary">
+        </div>    
+        <div class="col-md-12">
+            <div class="galary">
             
             <div class="col-md-3">
                 <img src="Source/Images/348s.jpg" class="img-responsive" alt="Responsive image"/>
@@ -27,24 +29,20 @@
                 <img src="Source/Images/2.jpg" class="img-responsive"  alt="Responsive image" />
             </div>
                   
-        </div>
-        <div class="btn-on-home-page">
+            </div>
+        </div>    
+        <div class="col-md-12">
+            <div class="btn-on-home-page">
             <div class="col-md-6 text-right">
-                <!--<button type="button" class="my-btn btn btn-warning " runat="server" onclick="BtnEnter_click">ВХОД</button>  -->
                 <asp:Button ID="btnEnter" CssClass="my-btn btn btn-warning" runat="server" Text="ВХОД" OnClick="BtnEnter_Click"/>
             </div>
             <div class="col-md-6 text-left">
-                <!--<button type="button" class="my-btn btn btn-warning">РЕГИСТРАЦИЯ</button> -->
                 <asp:Button ID="BtnRegistration" runat="server" CssClass="my-btn btn btn-warning" Text="РЕГИСТРАЦИЯ" OnClick="BtnRegistration_Click" />
             </div>
            
         </div>
+        </div>           
         
-        <!--<p><b>Название статьи:</b> <asp:TextBox ID="TextBox1" runat="server" Height="20px" Width="219px" BorderStyle="Dotted" Font-Size="Large"></asp:TextBox>
-        <asp:Button ID="Button2" runat="server" Text="Редактировать" OnClick="Button2_Click" CssClass="button2" />
-                <br /></p>
-        <asp:Label ID="Label1" runat="server" Text="Статья" CssClass="lable" Font-Size="X-Large"></asp:Label><br />
-        <br />-->
     </div>
 
 </asp:Content>

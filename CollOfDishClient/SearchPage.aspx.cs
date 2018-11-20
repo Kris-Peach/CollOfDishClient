@@ -27,5 +27,13 @@ namespace CollOfDishClient
             TxtBox_AnswerText.Visible = true;
             Btn_Suggest.Visible = true;
         }
+
+        protected void Btn_Suggest_Click(object sender, EventArgs e)
+        {
+            string sessionId = (string)Session["myValue"];
+            Uri baseurl = new Uri("http://localhost:52215/");
+            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/Carts.aspx");
+            Response.Redirect(newurl.ToString());
+        }
     }
 }

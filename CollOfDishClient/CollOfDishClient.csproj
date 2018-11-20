@@ -108,11 +108,11 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Carts.aspx" />
+    <None Include="Connected Services\ServiceReference1\AgServer.disco" />
+    <Content Include="Delivery.aspx" />
     <Content Include="EnterPage.aspx" />
-    <None Include="Connected Services\ServiceReference1\AgServer1.disco" />
     <Content Include="Order.aspx" />
     <Content Include="Payment.aspx" />
-    <Content Include="Scripts\WebForms\index.js" />
     <Content Include="SearchPage.aspx" />
     <Content Include="Source\Images\2.jpg" />
     <Content Include="Source\Images\212783-one-eyeland-roasted_chicken_slices-by-greg-stroube.jpg" />
@@ -138,7 +138,10 @@
     <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.UserRequestLog.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <None Include="Connected Services\ServiceReference1\AgServer1.wsdl" />
+    <None Include="Connected Services\ServiceReference1\AgServer.wsdl" />
+    <Content Include="Connected Services\ServiceReference1\CollOfDishClient.ServiceReference1.checkSessionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
     <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
     <None Include="Connected Services\ServiceReference1\Reference.svcmap">
@@ -218,6 +221,13 @@
     </Compile>
     <Compile Include="Carts.aspx.designer.cs">
       <DependentUpon>Carts.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Delivery.aspx.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Delivery.aspx.designer.cs">
+      <DependentUpon>Delivery.aspx</DependentUpon>
     </Compile>
     <Compile Include="EnterPage.aspx.cs">
       <DependentUpon>EnterPage.aspx</DependentUpon>

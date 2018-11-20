@@ -10,24 +10,24 @@
 namespace CollOfDishClient {
     
     
-    public partial class _Default {
+    public partial class Delivery {
         
         /// <summary>
-        /// btnEnter элемент управления.
+        /// Lbl_dateDelivery элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEnter;
+        protected global::System.Web.UI.WebControls.Label Lbl_dateDelivery;
         
         /// <summary>
-        /// BtnRegistration элемент управления.
+        /// Btn_GoSearch элемент управления.
         /// </summary>
         /// <remarks>
         /// Автоматически создаваемое поле.
         /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnRegistration;
+        protected global::System.Web.UI.WebControls.Button Btn_GoSearch;
     }
 }

@@ -12,7 +12,14 @@ namespace CollOfDishClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+            Session["myValue"] = HttpContext.Current.Session.SessionID;
+            /*string sessionId = (string)Session["myValue"];
+            Info info = new Info(sessionId);
+            info.client = new AgregatorServerSoapClient();
+            string answer;
+            answer = info.client.checkSession(info.key);
+            Lbl_1.Text = answer;*/
         }
         private class Info //Вложеный класс, который содержит информацию для соединения
         {
@@ -44,15 +51,21 @@ namespace CollOfDishClient
 
         protected void BtnEnter_Click(object sender, EventArgs e)
         {
-            
-            Response.Redirect("http://localhost/CollOfDishClient/EnterPage.aspx");
+            string sessionId = (string)Session["myValue"];
+
+            Uri baseurl = new Uri("http://localhost:52215/");
+            Uri newurl = new Uri(baseurl, "(S("+sessionId + "))/EnterPage.aspx");
+            Response.Redirect(newurl.ToString());
            
         }
 
         protected void BtnRegistration_Click(object sender, EventArgs e)
         {
-           
-            Response.Redirect("http://localhost/CollOfDishClient/Registration.aspx");
+            string sessionId = (string)Session["myValue"];
+            Uri baseurl = new Uri("http://localhost:52215/");
+            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/Registration.aspx");
+            Response.Redirect(newurl.ToString());
+            
            
 
         }

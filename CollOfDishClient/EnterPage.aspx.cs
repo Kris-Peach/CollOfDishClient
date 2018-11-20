@@ -11,7 +11,7 @@ namespace CollOfDishClient
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Btn_login_Click(object sender, EventArgs e)
@@ -21,8 +21,10 @@ namespace CollOfDishClient
             string password = TxtBox_password.Text;
             //ждем проверку от сервера
             //если проверка прошла, запускаем следующую страницу
-            
-            Response.Redirect("http://localhost/CollOfDishClient/SearchPage.aspx");
+            string sessionId = (string)Session["myValue"];
+            Uri baseurl = new Uri("http://localhost:52215/");
+            Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/SearchPage.aspx");
+            Response.Redirect(newurl.ToString());
            
 
         }

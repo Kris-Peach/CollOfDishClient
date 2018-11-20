@@ -7,7 +7,7 @@
             <h3 style="padding-left:2%;">Адрес доставки</h3>
         </div>
         <div class="form-group " style="padding-top: 5%;">
-        <label for="usrTown" class="col-xs-2 control-label">Город:</label>
+        <label for="usrTown" class="col-xs-2 control-label">Город *</label>
             <div class="col-xs-6">
             <asp:TextBox ID="TxtBox_usrTown" placeholder="Укажите город" runat="server" CssClass="form-control" ></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ID="valid_usrAdress" ControlToValidate="TxtBox_usrTown"
@@ -15,7 +15,7 @@
             </div>
         </div>
          <div class="form-group " style="padding-top: 5%;">
-             <label for="usrStreet" class="col-xs-2 control-label">Улица:</label>
+             <label for="usrStreet" class="col-xs-2 control-label">Улица *</label>
             <div class="col-xs-6">
             <asp:TextBox ID="TxtBox_usrStreet" placeholder="Укажите улицу" runat="server" CssClass="form-control" ></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ID="valid_usrStreet" ControlToValidate="TxtBox_usrStreet"
@@ -24,7 +24,7 @@
          </div>
         
         <div class="form-group " style="padding-top: 5%;">
-            <label for="usrHouse" class="col-xs-2 control-label">Дом:</label>
+            <label for="usrHouse" class="col-xs-2 control-label">Дом *</label>
             <div class="col-xs-6">
             <asp:TextBox ID="TxtBox_usrHouse" placeholder="Укажите номер дома" runat="server" CssClass="form-control" ></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ID="valid_usrHouse" ControlToValidate="TxtBox_usrHouse"
@@ -32,7 +32,7 @@
             </div>
         </div>
          <div class="form-group " style="padding-top: 5%;">
-            <label for="usrFlat" class="col-xs-2 control-label">Квартира:</label>
+            <label for="usrFlat" class="col-xs-2 control-label">Квартира *</label>
             <div class="col-xs-6">
             <asp:TextBox ID="TxtBox_usrFlat" placeholder="Укажите номер квартиры" runat="server" CssClass="form-control" ></asp:TextBox>
             <asp:RequiredFieldValidator runat="server" ID="valid_usrFlat" ControlToValidate="TxtBox_usrFlat"
@@ -40,7 +40,7 @@
             </div>
         </div>
         <div class="form-group " style="padding-top: 5%;">
-            <label for="usrComment" class="col-xs-2 control-label">Комментарии:</label>
+            <label for="usrComment" class="col-xs-2 control-label">Комментарии</label>
             <div class="col-xs-6">
             <asp:TextBox ID="TxtBox_usrComment" runat="server" CssClass="form-control" ></asp:TextBox>
             </div>

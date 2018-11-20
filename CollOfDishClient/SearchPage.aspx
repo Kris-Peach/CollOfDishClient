@@ -2,19 +2,22 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <div class="row">
-        <div class="main-title">
+        <div class="col-md-12 text-center">
             <div class="title-client">
                 <p> COLLOFDISH
             </div>
+        </div><!--<div class="main-title">-->
+        <div class="col-md-12 text-center">
             <div class="under-title">
                 <p>- Find Your Dish -</p>
             </div>
         </div>
-        <div class="col-md-9" >
+        <div class="col-md-12">
+            <div class="col-md-9" >
             <div class="form-inline">
                 
                 <div class="form-group" style="padding-top: 3%; padding-right:0; width:87%;">
-                    <label  class="col-xs-6 control-label" for="search" style="width:auto; font-size:25px;">Поиск блюд <span class = "glyphicon glyphicon-search" style="padding-top:3%;"></span>:</label>
+                    <label  class="col-xs-6 control-label" for="search" style="width:auto; font-size:18pt;">Поиск блюд <span class = "glyphicon glyphicon-search" style="padding-top:3%;"></span>:</label>
                     <asp:TextBox ID="TxtBox_search"  placeholder="Введите название блюда" runat="server"
                     CssClass="txt-search input-lg"></asp:TextBox>
                 <asp:RequiredFieldValidator runat="server" ID="valid_search" ControlToValidate="TxtBox_search"
@@ -25,8 +28,7 @@
             </div>
             
             </div>
-            
-        <div class="col-md-3">
+            <div class="col-md-3">
             <div class="row" style="padding-top:3%;">
                 <div class="col-md-4" style="padding-top:3%;">
                     <img src="Source/Images/user-icon-png-pnglogocom.png" class="img-responsive" alt="Responsive Image"/> 
@@ -36,28 +38,36 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-12 text-center" style="padding-top:3%; padding-left:3%; padding-right:3%;">
+        </div>
+        
+            
+        
+        <div class="col-md-12 text-center" style="padding-top:3%;">
             <div style="background-color:white;">
                 <asp:Label ID="Lbl_AnswerNameDish" Visible="false"
                 Font-Names="Allerta Stencil" Font-Bold="true" Font-Size="XX-Large" runat="server" Text="Ризотто"></asp:Label>
-            </div>
+            
+            </div>    
             
         </div>
-        <div class="row" style="margin-top:14%; margin-left:3%; margin-right:3%; background-color:white;">
-            <div class="col-md-6 text-center" style="padding-top:3%;">
-            <asp:Image  runat="server" ID="Img_AnswerImage" Visible="false" 
+        <div class="col-md-12">
+            <div style="background-color:white; display:-webkit-box;">
+                <div class="col-md-6 text-center" style="padding-top:3%;">
+                <asp:Image  runat="server" ID="Img_AnswerImage" Visible="false" 
                 ImageAlign="AbsMiddle" ImageUrl="~/Source/Images/user-icon-png-pnglogocom.png"/>
-        </div>
-        <div class="col-md-6 text-center" style="padding-top:3%; padding-left:5%;">
-            <asp:TextBox ID="TxtBox_AnswerText" runat="server" 
+                </div>
+                <div class="col-md-6 text-center" style="padding-top:3%; padding-left:5%;">
+                <asp:TextBox ID="TxtBox_AnswerText" runat="server" 
                 Font-Names="Source Sans Pro" Font-Bold="false" Font-Size="X-Large" ReadOnly="true"
                 TextMode="MultiLine" Rows="10" Columns="40" Text="Какой-то текст" 
                 BorderStyle="None" Visible="false"></asp:TextBox>
-            <asp:Button ID="Btn_Suggest" Visible="false" runat="server" CssClass="my-btn btn btn-warning"
-                Text="подобрать продуктовую корзину"/>
-        </div> 
+                <asp:Button ID="Btn_Suggest" Visible="false" runat="server" CssClass="my-btn btn btn-warning"
+                Text="подобрать продуктовую корзину" OnClick="Btn_Suggest_Click"/>
+                </div> 
+            </div>
+            
         </div>
-        
+       
     </div>
 </asp:Content>
 
