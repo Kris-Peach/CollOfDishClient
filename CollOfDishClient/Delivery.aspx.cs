@@ -12,7 +12,15 @@ namespace CollOfDishClient
         protected void Page_Load(object sender, EventArgs e)
         {
             string date = Request.QueryString["date"];
-            Lbl_dateDelivery.Text = "Дата доставки: " + date;
+            if(date == "400")
+            {
+                Lbl_dateDelivery.Text = "Заказ не оформлен";
+            }
+            else
+            {
+                Lbl_dateDelivery.Text = "Дата доставки: " + date;
+            }
+            
         }
 
         protected void Btn_GoSearch_Click(object sender, EventArgs e)

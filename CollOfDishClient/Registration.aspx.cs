@@ -4,11 +4,13 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using CollOfDishClient.ServiceReference1;
 
 namespace CollOfDishClient
 {
     public partial class Contact : Page
     {
+        protected AgregatorServerSoapClient server;
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -18,9 +20,22 @@ namespace CollOfDishClient
         {
             string usrName = TxtBox_usrName.Text;
             string usrScdName = TxtBox_usrScdName.Text;
-            string pass1 = TxtBox_pass1.Text;
-            string pass2 = TxtBox_pass2.Text;
-
+            string usrLogin = TxtBox_usrLogin.Text;
+            string pass = TxtBox_pass2.Text;
+            string sessionId = (string)Session["myValue"];
+            server = new AgregatorServerSoapClient();
+            int result = server.UserRegistration(sessionId,usrName,usrScdName,pass,usrLogin);
+            if (result == 200)
+            {
+                Uri baseurl = new Uri("http://localhost/CollOfDishClient/");
+                Uri newurl = new Uri(baseurl, "(S(" + sessionId + "))/Default");
+                Response.Redirect(newurl.ToString());
+            }
+            else
+            {
+                Lbl_warning.Text = "Зарегистрироваться не удалось";
+                Lbl_warning.Visible = true;
+            }
         }
     }
 }
